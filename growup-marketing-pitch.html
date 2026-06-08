@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow Up Marketing — Restaurant Growth Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #E8272A;
+    --orange: #FF6B35;
+    --dark: #0D0D0D;
+    --cream: #F5F0E8;
+    --gold: #D4A84B;
+    --white: #FFFFFF;
+    --gray: #888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 60px 24px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,39,42,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(212,168,75,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(212,168,75,0.4);
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 14vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  .hero h1 span {
+    color: var(--red);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: rgba(245,240,232,0.65);
+    max-width: 520px;
+    margin: 24px auto 0;
+    line-height: 1.7;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-sub strong { color: var(--cream); }
+
+  .hero-cta {
+    margin-top: 44px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #c41e21; transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 1px solid rgba(245,240,232,0.3);
+    color: var(--cream);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .scroll-line {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeUp 1s 0.8s ease both;
+  }
+  .scroll-dot {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    animation: scrollPulse 1.6s infinite;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem {
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .problem h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .problem p {
+    font-size: 16px;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    margin-top: 60px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .pain-card {
+    background: var(--dark);
+    padding: 32px 24px;
+    transition: background 0.3s;
+  }
+  .pain-card:hover { background: rgba(232,39,42,0.07); }
+
+  .pain-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .pain-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--cream);
+  }
+
+  .pain-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 100px 24px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .services-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+  }
+
+  .services-header h2 em {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .services-header p {
+    margin-top: 16px;
+    color: var(--gray);
+    font-size: 15px;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .service-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--orange));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(232,39,42,0.15);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .service-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--cream);
+  }
+
+  .service-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  .service-tags {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(232,39,42,0.3);
+    color: rgba(232,39,42,0.8);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── WHY US ── */
+  .why {
+    padding: 100px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .why-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .why-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    margin-bottom: 64px;
+  }
+
+  .stat-box {
+    background: var(--dark);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .promises {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .promises { grid-template-columns: 1fr; }
+  }
+
+  .promise-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .promise-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .promise-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .promise-item p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── PACKAGES ── */
+  .packages {
+    padding: 100px 24px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .packages-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .packages-inner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+    margin-bottom: 8px;
+  }
+
+  .packages-inner > p {
+    color: var(--gray);
+    font-size: 15px;
+    margin-bottom: 56px;
+  }
+
+  .pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    text-align: left;
+  }
+
+  .pkg-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 36px 28px;
+    position: relative;
+  }
+
+  .pkg-card.featured {
+    border-color: var(--red);
+    background: rgba(232,39,42,0.05);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .pkg-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .pkg-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .pkg-price span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: var(--gray);
+  }
+
+  .pkg-desc {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .pkg-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pkg-list li {
+    font-size: 13px;
+    color: rgba(245,240,232,0.8);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .pkg-list li::before {
+    content: '✓';
+    color: var(--red);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── WHO ── */
+  .who {
+    padding: 100px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .who h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+    margin-bottom: 16px;
+  }
+
+  .who p {
+    font-size: 16px;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .client-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .client-chip {
+    border: 1px solid rgba(212,168,75,0.35);
+    color: var(--gold);
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .client-chip:hover { background: rgba(212,168,75,0.1); }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,39,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-banner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 9vw, 96px);
+    line-height: 0.95;
+    margin-bottom: 28px;
+  }
+
+  .cta-banner h2 span { color: var(--red); }
+
+  .cta-banner p {
+    color: var(--gray);
+    font-size: 16px;
+    margin-bottom: 44px;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .contact-item .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+
+  .contact-item .value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+    color: var(--gray);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  footer strong { color: var(--red); }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #25D366;
+    color: #fff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.2s;
+    animation: pulse 2s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232,39,42,0.4), transparent);
+    margin: 0 24px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+  }
+
+  /* ── HINDI HIGHLIGHT ── */
+  .hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">🇮🇳 Pan India Restaurant Marketing Agency</div>
+  <h1>GROW UP<span>MARKETING</span></h1>
+  <p class="hero-sub">
+    Restaurants, Hotels aur Cloud Kitchens ke liye <strong>complete digital + offline marketing</strong> — jo sirf dikhti nahi, <strong>bikwati bhi hai.</strong>
+  </p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn-primary">Free Consultation Lo →</a>
+    <a href="#services" class="btn-outline">Kya Karte Hain?</a>
+  </div>
+  <div class="scroll-line">
+    <div class="scroll-dot"></div>
+    Scroll
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="section-label">Sach Baat</div>
+  <h2>Aapka Khana Accha Hai —<br>Par Log Jaante Nahi</h2>
+  <p>India mein har roz hazaron restaurants open hote hain. Jo dikhta hai, woh bikta hai. Agar aapki online presence zero hai toh aap competition mein exist hi nahi karte.</p>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">📱</div>
+      <h3>Instagram Pe Zero Orders</h3>
+      <p>Page hai, posts bhi hain — lekin inquiries? Bilkul nahi. Kyunki sirf post karna kaafi nahi hota.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🗺️</div>
+      <h3>Google Pe Nahi Milte</h3>
+      <p>Koi bhi "restaurant near me" search kare aur aap nazar nahi aate — toh order unhe milta hai jo aaye hain.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🖨️</div>
+      <h3>Menu Dekhke Bhookh Nahi Lagti</h3>
+      <p>Purana, plain menu design customers ko push nahi karta. Design psychology kaam karti hai.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">💸</div>
+      <h3>Agency Pe Lakh Kharcha</h3>
+      <p>Bade agencies chhote restaurants ka budget nahi samajhtein. Hum wahan hain jahan aap hain.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="section-label">Hamare Services</div>
+      <h2>Sab Kuch <em>Ek Jagah</em></h2>
+      <p>Aapko 5 alag vendors ki zaroorat nahi. Hum sab handle karte hain.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Brand Identity & Logo</h3>
+        <p>Professional logo, color palette aur brand identity jo aapke restaurant ki personality represent kare — memorable aur unique.</p>
+        <div class="service-tags">
+          <span class="tag">Logo Design</span>
+          <span class="tag">Brand Kit</span>
+          <span class="tag">Color Guide</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Menu Design (Print + Digital)</h3>
+        <p>Aisa menu jo customer ko order karne par majboor kare. Offline print-ready + online QR menu dono. Psychology-driven layout.</p>
+        <div class="service-tags">
+          <span class="tag">Print Ready</span>
+          <span class="tag">QR Menu</span>
+          <span class="tag">Dynamic Updates</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Social Media Marketing</h3>
+        <p>Instagram & Facebook page setup, content calendar, reels, posts — sab managed. Sirf followers nahi, real inquiries aur walk-ins.</p>
+        <div class="service-tags">
+          <span class="tag">Instagram</span>
+          <span class="tag">Facebook</span>
+          <span class="tag">Reels</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>WhatsApp & SMS Marketing</h3>
+        <p>Existing customers ko offers, new launches aur festival specials bhejo directly. Highest open rate — 98% messages padhe jaate hain.</p>
+        <div class="service-tags">
+          <span class="tag">WhatsApp Broadcast</span>
+          <span class="tag">SMS Campaigns</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Print Materials</h3>
+        <p>Pamphlet, brochure, visiting card, standee, banner — design se lekar printing aur local distribution tak. Ek call mein sab.</p>
+        <div class="service-tags">
+          <span class="tag">Pamphlet</span>
+          <span class="tag">Brochure</span>
+          <span class="tag">Visiting Card</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>Google & Email Marketing</h3>
+        <p>Google Business setup, reviews management, GMB posts aur email campaigns jo aapko search mein top par laayein aur repeat customers banayein.</p>
+        <div class="service-tags">
+          <span class="tag">Google Business</span>
+          <span class="tag">Email Campaigns</span>
+          <span class="tag">SEO Basics</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="why-header">
+    <div class="section-label">Kyun Grow Up?</div>
+    <h2>Hum Agency Nahi,<br>Aapka Marketing Partner Hain</h2>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Months Experience</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">F&B</div>
+      <div class="stat-label">Only Focus</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Point of Contact</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">₹↓</div>
+      <div class="stat-label">Budget Friendly</div>
+    </div>
+  </div>
+
+  <div class="promises">
+    <div class="promise-item">
+      <div class="promise-dot"></div>
+      <div>
+        <h4>Restaurant-Only Experts</h4>
+        <p>Hum sirf F&B mein kaam karte hain. Aapki industry ki language samajhte hain — peak hours, seasonal offers, delivery platforms.</p>
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-dot"></div>
+      <div>
+        <h4>Transparent Pricing</h4>
+        <p>Koi hidden charges nahi. Pehle quote, phir kaam. Jo bola woh deliver karte hain.</p>
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-dot"></div>
+      <div>
+        <h4>Fast Turnaround</h4>
+        <p>Design proofs 48 ghante mein. Campaign setup 5-7 din mein. Aapka time valuable hai.</p>
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-dot"></div>
+      <div>
+        <h4>Pan India Reach</h4>
+        <p>Aap kahan bhi ho — Delhi, Mumbai, Bangalore, Lucknow — hum remotely sab handle karte hain seamlessly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PACKAGES -->
+<section class="packages">
+  <div class="packages-inner">
+    <div class="section-label">Pricing</div>
+    <h2>Simple Packages</h2>
+    <p>No confusion. Choose karein jo suit kare.</p>
+
+    <div class="pkg-grid">
+
+      <div class="pkg-card">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-price">Custom <span>/ month</span></div>
+        <div class="pkg-desc">Naya restaurant ya cloud kitchen jo abhi start kar raha hai.</div>
+        <ul class="pkg-list">
+          <li>Logo + Basic Brand Kit</li>
+          <li>Menu Design (1 version)</li>
+          <li>Instagram Setup + 12 Posts/month</li>
+          <li>Google Business Setup</li>
+          <li>1 Pamphlet Design</li>
+          <li>WhatsApp Campaign Setup</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card featured">
+        <div class="featured-badge">⭐ Most Popular</div>
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-price">Custom <span>/ month</span></div>
+        <div class="pkg-desc">Established business jo seriously grow karna chahta hai.</div>
+        <ul class="pkg-list">
+          <li>Sab Starter mein +</li>
+          <li>Instagram + Facebook Management</li>
+          <li>20 Posts + 4 Reels/month</li>
+          <li>Monthly WhatsApp Campaigns</li>
+          <li>Email Marketing (1 campaign/month)</li>
+          <li>Dynamic QR Menu</li>
+          <li>Monthly Performance Report</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-name">Full Stack</div>
+        <div class="pkg-price">Custom <span>/ month</span></div>
+        <div class="pkg-desc">Hotel ya multi-outlet brand jo complete marketing outsource karna chahti hai.</div>
+        <ul class="pkg-list">
+          <li>Sab Growth mein +</li>
+          <li>Paid Ads Management (Meta)</li>
+          <li>SMS Broadcast Campaigns</li>
+          <li>Print Design + Distribution</li>
+          <li>Weekly Strategy Calls</li>
+          <li>Priority Support</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO -->
+<section class="who">
+  <div class="section-label">Kaun Hain Hamare Clients</div>
+  <h2>Aap Inme Se Hain?</h2>
+  <p>Chhote se bade — sabke liye solutions hain hamare paas. F&B industry ki har category ko serve karte hain hum.</p>
+  <div class="client-types">
+    <div class="client-chip">🍽️ Restaurants</div>
+    <div class="client-chip">🏨 Hotels & Resorts</div>
+    <div class="client-chip">☁️ Cloud Kitchens</div>
+    <div class="client-chip">🧁 Bakeries & Cafes</div>
+    <div class="client-chip">🥡 QSR / Fast Food</div>
+    <div class="client-chip">🍰 Home Chefs</div>
+    <div class="client-chip">🍻 Bars & Lounges</div>
+    <div class="client-chip">🎉 Catering Services</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLIENTS -->
+<section style="padding: 100px 24px; text-align: center;">
+  <div class="section-label">Hamare Clients</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,7vw,64px); margin-bottom: 16px;">
+    Inhoone Bharosa Kiya.<br><span style="color:var(--red);">Aur Grow Kiya.</span>
+  </h2>
+  <p style="color:var(--gray); font-size:15px; max-width:480px; margin:0 auto 56px; line-height:1.7;">
+    Chhoti shuruwat se badi pehchaan tak — yeh brands aaj market mein visible hain kyunki unhone sahi waqt par sahi decision liya.
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2px; max-width:900px; margin:0 auto 48px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.06);">
+
+    <div style="background:var(--dark); padding:36px 24px; transition:background 0.3s;" onmouseover="this.style.background='rgba(232,39,42,0.07)'" onmouseout="this.style.background='var(--dark)'">
+      <div style="font-size:32px; margin-bottom:12px;">☕</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; color:var(--cream); margin-bottom:6px;">1857 City Cafe</div>
+      <div style="font-size:12px; color:var(--gray); letter-spacing:1px; text-transform:uppercase;">Cafe & Beverages</div>
+    </div>
+
+    <div style="background:var(--dark); padding:36px 24px; transition:background 0.3s;" onmouseover="this.style.background='rgba(232,39,42,0.07)'" onmouseout="this.style.background='var(--dark)'">
+      <div style="font-size:32px; margin-bottom:12px;">🍲</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; color:var(--cream); margin-bottom:6px;">Desi HandiWala</div>
+      <div style="font-size:12px; color:var(--gray); letter-spacing:1px; text-transform:uppercase;">Traditional Cuisine</div>
+    </div>
+
+    <div style="background:var(--dark); padding:36px 24px; transition:background 0.3s;" onmouseover="this.style.background='rgba(232,39,42,0.07)'" onmouseout="this.style.background='var(--dark)'">
+      <div style="font-size:32px; margin-bottom:12px;">🥘</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; color:var(--cream); margin-bottom:6px;">Shudh Desi Rasoi</div>
+      <div style="font-size:12px; color:var(--gray); letter-spacing:1px; text-transform:uppercase;">Home-Style Cooking</div>
+    </div>
+
+    <div style="background:var(--dark); padding:36px 24px; transition:background 0.3s;" onmouseover="this.style.background='rgba(232,39,42,0.07)'" onmouseout="this.style.background='var(--dark)'">
+      <div style="font-size:32px; margin-bottom:12px;">🍱</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; color:var(--cream); margin-bottom:6px;">Thaliwala</div>
+      <div style="font-size:12px; color:var(--gray); letter-spacing:1px; text-transform:uppercase;">Thali & Meals</div>
+    </div>
+
+  </div>
+
+  <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(212,168,75,0.3); padding:12px 28px; border-radius:40px;">
+    <span style="color:var(--gold); font-size:18px;">✦</span>
+    <span style="font-size:14px; color:rgba(245,240,232,0.7);">Aur bahut saare <strong style="color:var(--cream);">happy clients</strong> jo hamare saath grow kar rahe hain</span>
+    <span style="color:var(--gold); font-size:18px;">✦</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-banner" id="contact">
+  <div class="section-label">Shuru Karte Hain</div>
+  <h2>AAPKA BUSINESS<br><span>GROW KAREGA</span></h2>
+  <p>Free consultation mein baat karte hain. Koi commitment nahi — sirf honest conversation ki aapko kya chahiye.</p>
+  <a href="https://wa.me/919027335150?text=Hi%20Grow%20Up%20Marketing%2C%20I%20want%20a%20free%20consultation%20for%20my%20restaurant." class="btn-primary" style="font-size:15px; padding:16px 40px;">
+    WhatsApp Pe Baat Karo →
+  </a>
+
+  <div class="contact-row">
+    <div class="contact-item">
+      <span class="label">WhatsApp / Call</span>
+      <span class="value">+91 90273 35150</span>
+    </div>
+    <div class="contact-item">
+      <span class="label">Email</span>
+      <span class="value">growupmarketing@aol.com</span>
+    </div>
+    <div class="contact-item">
+      <span class="label">Instagram</span>
+      <span class="value">@growupmarketing</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <strong>Grow Up Marketing</strong> · Pan India · F&B Marketing Specialists</p>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/919027335150" title="WhatsApp us">💬</a>
+
+</body>
+</html>
